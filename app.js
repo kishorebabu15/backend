@@ -31,6 +31,9 @@ const placeRoutes = require("./routes/place")
 //Routes
 app.use("/api", placeRoutes);
 //Starting a server
+app.get("/", (req, res) => {
+    res.send("Getting out")
+})
 app.listen(port, () => {
   console.log(`app is running at ${port}...`);
 });

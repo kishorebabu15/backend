@@ -12,3 +12,12 @@ exports.createProduct = (req, res) => {
     })
 }
 
+exports.getProducts = (req, res) => {
+    Product.find().exec((err, data) => {
+        if (err) {
+            return res.status(400).json(err);
+        }
+        res.send(data);
+    })
+}
+

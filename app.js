@@ -26,6 +26,10 @@ app.use(cors());
 //PORT
 const port = process.env.PORT || 8080;
 
+
+const placeRoutes = require("./routes/place")
+//Routes
+app.use("/api", placeRoutes);
 //Starting a server
 app.listen(port, () => {
   console.log(`app is running at ${port}...`);

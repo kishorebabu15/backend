@@ -1,23 +1,32 @@
-const Product = require("../models/product") 
+const Place = require("../models/place")
 
-exports.createProduct = (req, res) => {
-    const prod = new Product(req.body);
-
-
-    prod.save((err, prod) => {
-        if (err) {
-            return res.json({err: "errororor"})
-        }
-        res.send(prod)
-    })
+exports.addRecord = (req, res) => {
+    res.send("kasjdand")
 }
 
-exports.getProducts = (req, res) => {
-    Product.find().exec((err, data) => {
-        if (err) {
-            return res.status(400).json(err);
+
+
+const addd = new Place({
+    placeName: "Bengaluru",
+    data: [
+        {
+            date: Date.now(),
+            market: [
+                {
+                    name: "62c02877bf4a232cfcd23f9c",
+                    price : 100
+                },
+                {
+                    name: "62c029755c9f90292cbea8ba",
+                    price : 120
+                }
+            ]
         }
-        res.send(data);
-    })
-}
+    ]
+})
+
+addd.save((err, data) => {
+    if (err) { console.log(err) }
+    console.log("savesdd")
+})
 

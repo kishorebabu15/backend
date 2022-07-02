@@ -5,12 +5,13 @@ const prodSch = new mongoose.Schema({
         type: ObjectId,
         ref: "Product",
     },
+    price: Number
 });
 const dateSchema = new mongoose.Schema({
     date: {
         type: Date,
     },
-    array: [prodSch],
+    market: [prodSch],
 });
 
 const placeSchema = new mongoose.Schema({
